@@ -3,6 +3,7 @@ import * as path from "path";
 import * as promise from "bluebird";
 
 const Promise = promise.Promise;
+
 const sqlite = sqlite3.verbose();
 const dbPath: string = path.resolve(__dirname, "sqlite.db");
 
