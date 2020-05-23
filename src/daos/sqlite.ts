@@ -101,15 +101,6 @@ class DAO {
           reject(err);
         } else {
           resolve(rows);
-
-          close() {
-            return this.db.close((err) => {
-              if (err) {
-                return console.error("Error closign database:", err);
-              }
-              console.log("Database closed.");
-            });
-          }
         }
       });
     });
