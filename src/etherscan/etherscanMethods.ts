@@ -7,7 +7,7 @@ const Promise = promise.Promise;
 
 const etherscanURL = "https://api.etherscan.io/api";
 
-export default function getAddresses() {
+function getAddresses() {
   let holdersAddresses: string[] = [];
   let config: object = {
     method: "get",
@@ -33,3 +33,32 @@ export default function getAddresses() {
     });
   });
 }
+
+function getBalance(address: string) {
+  let output: number;
+  let config: object = {
+    method: "get",
+    url: etherscanURL,
+    params: {
+      module: "account",
+      action: "tokenbalance",
+      contractaddress: process.env.TOKEN_CONTRACT_ADDRESS,
+      address: address,
+      tag: "latest",
+      apikey: process.env.ETHERSCAN_KEY,
+    },
+  };
+
+  return new Promise((resolve) => {
+    axios(config).then((response) => {
+      let balance = response.data.result.toString();
+
+      output = parseInt(balance.substring(0, balance.length - 18));
+      console.log(output);
+      // console.log(response);
+      resolve(response);
+    });
+  });
+}
+
+export { getAddresses, getBalance };
