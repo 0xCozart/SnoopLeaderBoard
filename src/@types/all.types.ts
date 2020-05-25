@@ -1,3 +1,4 @@
-// export types addressList = {
-
-// }
+export type tableProps = {
+  addressList: string[];
+  // balance: number;
+};

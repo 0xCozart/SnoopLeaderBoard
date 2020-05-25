@@ -35,7 +35,7 @@ class DAO {
   }
 
   update(
-    addresses: [string] | null,
+    addresses: string[] | null,
     singleAddress: string | null,
     amount: number | null
   ) {
@@ -107,10 +107,26 @@ class DAO {
     });
   }
 
+  allAddresses() {
+    let allDataSQL = `SELECT address FROM addresses`;
+
+    return new Promise((resolve, reject) => {
+      this.db.all(allDataSQL, (err, rows) => {
+        if (err) {
+          console.log("Error running sql: " + allDataSQL);
+          console.log(err);
+          reject(err);
+        } else {
+          resolve(rows);
+        }
+      });
+    });
+  }
+
   close() {
     return this.db.close((err) => {
       if (err) {
-        return console.error("Error closign database:", err);
+        return console.error("Error closing database:", err);
       }
       console.log("Database closed.");
     });

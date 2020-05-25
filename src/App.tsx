@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import AddressTable from "./components/AddressTable";
+import { getAddresses, getBalance } from "./etherscan/etherscanMethods";
+// import DAO from "./daos/sqlite";
+import "./App.css";
 
 function App() {
+  const [addressList, setAddressList] = useState<string[]>([]);
+
+  useEffect(() => {
+    (async () => {
+      let address = await getAddresses().then((res) => {
+        return res;
+      });
+      setAddressList(address);
+      console.log(addressList);
+    })();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AddressTable addressList={addressList}></AddressTable>
     </div>
   );
 }

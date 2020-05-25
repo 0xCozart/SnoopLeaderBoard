@@ -7,6 +7,7 @@
     "bluebird": "^3.7.2",
     "dotenv": "^8.2.0",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
     "sqlite3": "^4.2.0",
@@ -18,7 +19,6 @@
     "@testing-library/user-event": "^7.2.1",
     "@types/axios": "^0.14.0",
     "@types/bluebird": "^3.5.32",
-    "@types/dotenv": "^8.2.0",
     "@types/jest": "^24.9.1",
     "@types/node": "^12.12.41",
     "@types/react": "^16.9.35",
@@ -46,5 +46,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "externals": {
+    "node-hid": "commonjs node-hid",
+    "usb": "commonjs usb"
   }
 }
