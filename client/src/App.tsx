@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import AddressTable from "./components/AddressTable";
 import { getAddresses, getBalance } from "./etherscan/etherscanMethods";
-// import DAO from "./daos/sqlite";
 import "./App.css";
+// import * as dotenv from "dotenv";
+// import * as path from "path";
+
+// dotenv.config({ path: path.resolve(__dirname, "..", ".env") });
 
 function App() {
   const [addressList, setAddressList] = useState<string[]>([]);
@@ -13,10 +16,10 @@ function App() {
         return res;
       });
       setAddressList(address);
-      console.log(addressList);
     })();
   }, []);
 
+  console.log(addressList);
   return (
     <div className="App">
       <AddressTable addressList={addressList}></AddressTable>

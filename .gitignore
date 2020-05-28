@@ -10,7 +10,7 @@ node_modules/
 
 # production
 /build
-
+build/
 # misc
 .DS_Store
 .env.local
@@ -23,7 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Environment 
-.env
+*.env
 
 # JS file null
 *.js
