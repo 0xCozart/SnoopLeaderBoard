@@ -1,39 +1,39 @@
 import axios from "axios";
-import * as promise from "bluebird";
 import * as dotenv from "dotenv";
 import * as path from "path";
 
-dotenv.config({ path: path.resolve(__dirname, "..", ".env") });
-
-const bluePromise = promise.Promise;
+dotenv.config({ path: path.resolve(__dirname, "../..", ".env") });
 
 const etherscanURL = "https://api.etherscan.io/api?";
 
-function getAddresses(): Promise<string[]> {
+function getAddresses(
+  contractAddress: string,
+  address: string,
+  apikey: string
+): Promise<string[]> {
   let config: object = {
     method: "get",
     url: etherscanURL,
     params: {
       module: "account",
       action: "tokentx",
-      contractaddress: process.env.TOKEN_CONTRACT_ADDRESS,
-      address: process.env.TOKEN_HOLDER_ADDRESS,
+      contractaddress: contractAddress,
+      address: address,
       sort: "asc",
-      apikey: process.env.ETHERSCAN_KEY,
+      apikey: apikey,
     },
   };
 
-  let uniqueAddressList: [string];
-  return new bluePromise((resolve) => {
-    const call = axios(config).then((response) => {
-      let i;
-      for(i=0; i<response.data.result.length; i++) {
-        if(!(response.data.result[i].to in uniqueAddressList)) {
-          uniqueAddressList.push(response.data.result[i].to)
+  return new Promise((resolve) => {
+    let uniqueAddressList: string[] = [];
+    axios(config).then((response) => {
+      for (let i = 0; i < response.data.result.length; i++) {
+        if (!uniqueAddressList.includes(response.data.result[i].to)) {
+          uniqueAddressList.push(response.data.result[i].to);
         }
       }
-      resolve(uniqueAddressList)
-    });
+      console.log(uniqueAddressList);
+      resolve(uniqueAddressList);
     });
   });
 }
@@ -53,7 +53,7 @@ function getBalance(address: string): Promise<number> {
     },
   };
 
-  return new bluePromise((resolve) => {
+  return new Promise((resolve) => {
     let call = axios(config).then((response) => {
       let balance = response.data.result.toString();
 
@@ -63,4 +63,4 @@ function getBalance(address: string): Promise<number> {
   });
 }
 
-// export { getAddresses, getBalance };
+export { getAddresses, getBalance };
