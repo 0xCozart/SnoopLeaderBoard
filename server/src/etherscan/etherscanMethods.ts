@@ -32,7 +32,7 @@ function getAddresses(
           uniqueAddressList.push(response.data.result[i].to);
         }
       }
-      console.log(uniqueAddressList);
+      // console.log(uniqueAddressList);
       resolve(uniqueAddressList);
     });
   });

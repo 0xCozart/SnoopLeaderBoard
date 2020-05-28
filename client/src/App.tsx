@@ -12,11 +12,12 @@ function App() {
   useEffect(() => {
     fetch("/address-list")
       .then((res) => {
-        let list = res.blob();
+        const list = res.json();
         return list;
       })
       .then((res) => {
-        setAddressList([...addressList, res]);
+        console.log(res.res);
+        setAddressList(res.res);
       });
   }, []);
 
