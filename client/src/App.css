@@ -3,7 +3,6 @@ body {
   height: 100%;
   width: 100%;
   position: fixed;
-  /* background-color: #282c34; */
 }
 
 .App {
@@ -32,17 +31,10 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.table-div {
-  display: inline-block;
-  opacity: 0.8;
-  height: 500px;
-  overflow-y: scroll;
-}
-
 .adventure-logo > img {
   position: absolute;
-  left: 40%;
-  top: 15px;
+  left: 5%;
+  bottom: 15px;
   width: 350px;
   height: 100px;
   display: inline-block;
@@ -62,9 +54,28 @@ body {
   right: 10px;
 }
 
+.table-div {
+  display: inline-block;
+  opacity: 0.8;
+  height: 513px;
+  overflow-y: scroll;
+}
+
 .link-card {
+  display: inline-block;
+  position: relative;
+}
+
+.db-card {
+  display: inline-block;
+  position: relative;
+}
+
+.container {
   position: absolute;
-  top: 39%;
-  right: 15%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  top: 10%;
+  right: 19.5%;
 }

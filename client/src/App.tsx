@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AddressTable from "./components/AddressTable";
 import { Explorer, sites } from "adventure-component-library";
-import CardLink from "./components/CardLink";
+import { CardLink, DbCard } from "./components/Cards";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -26,17 +26,14 @@ function App() {
         <img src="/adventure-logo.png" alt="adventure logo" />
       </div>
       <audio src="/GinNJuice.mp3" autoPlay={true} loop={false}></audio>
-      <div className="board">
-        <AddressTable addressList={addressList}></AddressTable>
-      </div>
-      <div className="link-card">
+      <div className="container">
         <CardLink></CardLink>
+        <AddressTable addressList={addressList}></AddressTable>
+        <DbCard></DbCard>
       </div>
-      {/* <div>
-        <img className={"snoop"} src="/snoop-dance.gif" alt="OG" />
-      </div> */}
+      <img className={"snoop"} src="/snoop-dance.gif" alt="OG" />
       <div className="explorer-bar">
-        <Explorer site={sites.leaderboard} />
+        <Explorer site={sites.GinNJuice} />
       </div>
     </div>
   );
