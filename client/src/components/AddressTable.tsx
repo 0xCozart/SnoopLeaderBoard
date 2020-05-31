@@ -16,7 +16,15 @@ function AddressTable(props: tableProps) {
           {props.addressList.map((value, index) => {
             return (
               <tr key={index}>
-                <td>{value}</td>
+                <td>
+                  <a
+                    href={`https://etherscan.io/address/${value}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {value}
+                  </a>
+                </td>
               </tr>
             );
           })}

@@ -31,9 +31,9 @@ function App() {
         <AddressTable addressList={addressList}></AddressTable>
         <DbCard></DbCard>
       </div>
-      <img className={"snoop"} src="/snoop-dance.gif" alt="OG" />
+      <img className="snoop" src="/snoop-dance.gif" alt="OG" />
       <div className="explorer-bar">
-        <Explorer site={sites.GinNJuice} />
+        <Explorer site={sites.ginandjuice} />
       </div>
     </div>
   );

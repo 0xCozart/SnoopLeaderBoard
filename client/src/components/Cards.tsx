@@ -13,7 +13,10 @@ function CardLink() {
           <Card.Text>
             Ethererum ERC-20 Collectible for all your sippin needs.
           </Card.Text>
-          <Button variant="light" href="http://52.53.173.93/">
+          <Button
+            variant="light"
+            onClick={() => window.open("http://52.53.173.93/")}
+          >
             Visit G&amp;J
           </Button>
         </Card.Body>
@@ -32,7 +35,10 @@ function DbCard() {
           <Card.Text>
             Monitor transactions involving Adventure Corp. sponsored tokens.
           </Card.Text>
-          <Button variant="light" href="http://13.56.163.182:8000/#/">
+          <Button
+            variant="light"
+            onClick={() => window.open("http://13.56.163.182:8000/#/")}
+          >
             Visit Database
           </Button>
         </Card.Body>

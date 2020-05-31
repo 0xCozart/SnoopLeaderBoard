@@ -5,6 +5,10 @@ body {
   position: fixed;
 }
 
+a {
+  color: white;
+}
+
 .App {
   text-align: center;
 }
@@ -52,6 +56,7 @@ body {
   position: absolute;
   bottom: 0px;
   right: 10px;
+  height: 170px;
 }
 
 .table-div {
