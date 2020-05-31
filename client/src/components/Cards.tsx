@@ -7,7 +7,7 @@ function CardLink() {
   return (
     <div className="link-card">
       <Card bg="dark" text="white" style={{ width: "21rem" }}>
-        <Card.Img variant="top" src="/ginjuice.jpg" />
+        <Card.Img variant="top" src="/ethereum-icon.png" />
         <Card.Body>
           <Card.Title>Gin &amp; Juice</Card.Title>
           <Card.Text>
@@ -29,7 +29,7 @@ function DbCard() {
   return (
     <div className="db-card">
       <Card bg="dark" text="white" style={{ width: "21rem" }}>
-        <Card.Img variant="top" src="/ethereum-logo.png" />
+        <Card.Img variant="top" src="/nodes.gif" alt="nodes" />
         <Card.Body>
           <Card.Title>Adventure Token Database</Card.Title>
           <Card.Text>
