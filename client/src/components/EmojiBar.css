@@ -1,0 +1,16 @@
+.emoji-picker {
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  transform: translate(-50%);
+  /* right: 0.1%; */
+}
+
+.emoji-toggle {
+  position: absolute;
+}
+
+.emoji-bar {
+  height: 70px;
+  width: 500px;
+}
