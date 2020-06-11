@@ -1,8 +1,8 @@
 .emoji-picker {
   position: absolute;
-  left: 50%;
-  bottom: 50px;
-  transform: translate(-50%);
+  left: 60%;
+  bottom: 15px;
+  transform: translate(-40%);
   /* right: 0.1%; */
 }
 
