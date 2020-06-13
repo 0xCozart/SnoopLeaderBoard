@@ -84,3 +84,23 @@ a {
   top: 10%;
   right: 19.5%;
 }
+
+.but {
+  bottom: 300px;
+  left: 700px;
+  position: absolute;
+}
+
+.but2 {
+  bottom: 30px;
+  right: 500px;
+  position: absolute;
+}
+
+.bar2 {
+  right: 300px;
+  bottom: 500px;
+  position: absolute;
+  height: 100px;
+  width: 435px;
+}

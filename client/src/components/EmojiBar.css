@@ -5,12 +5,3 @@
   transform: translate(-40%);
   /* right: 0.1%; */
 }
-
-.emoji-toggle {
-  position: absolute;
-}
-
-.emoji-bar {
-  height: 70px;
-  width: 500px;
-}
